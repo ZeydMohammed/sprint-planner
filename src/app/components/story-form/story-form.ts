@@ -25,20 +25,25 @@ export class StoryForm {
   ) { }
 
   saveStories() {
-    const story: Story = {
-      name: this.storyName.value ?? '',
-      points: Number(this.storyPoint.value) ?? 0,
-      description: this.storyDescription.value ?? '',
-    }
+    if (this.storyName.valid || this.storyPoint.valid) {
+      const story: Story = {
+        name: this.storyName.value ?? '',
+        points: Number(this.storyPoint.value) ?? 0,
+        description: this.storyDescription.value ?? '',
+      }
 
-    if (this.service.addStory(story)) {
-      this.storyName.reset()
-      this.storyPoint.reset()
-      this.storyDescription.reset()
-      this.error = ""
+      if (this.service.addStory(story)) {
+        this.storyName.reset()
+        this.storyPoint.reset()
+        this.storyDescription.reset()
+        this.error = ""
+      }
+      else {
+        this.error = "This story name already exists in your list."
+      }
     }
-    else {
-      this.error = "This story name already exists in your list."
+    else{
+      this.error = "Story name and points is mandatory."
     }
   }
 
