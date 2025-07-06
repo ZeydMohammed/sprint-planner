@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{data.sprintName}} - {{data.sprintPoint}}</h2>
+<mat-dialog-content>
+    <div class="all-stories">
+        @if(service.getStoriesSelected().length > 0){
+        @for(story of service.getStoriesSelected(); track $index){
+        <mat-card class="single-story" appearance="outlined">
+            <div class="story-name">{{story.name}}</div>
+            <div class="story-point">{{story.points}}</div>
+            <div class="story-description">{{story.description}}</div>
+        </mat-card>
+        }
+        }
+
+        @if(service.getStoriesSelected().length == 0 ){
+        <div class="no-stories">There are no stories assigned to the current sprint.</div>
+        }
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="clear-btn mr-4" mat-dialog-close>Close</button>
+    <button class="clear-btn mr-4" (click)="service.clearStories()">Clear Stories</button>
+    <button class="clear-btn" (click)="service.clearSelectedStories()">Clear Sprints</button>
+</mat-dialog-actions>

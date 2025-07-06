@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Add Story Form</h2>
+<mat-dialog-content>
+        @if(!!error){
+            <mat-card appearance="outlined" class="error-card">{{error}}</mat-card>
+        }
+        <div class="input-field">
+            <div class="field-label">Story Name</div>
+            <input type="text" [formControl]="storyName">
+        </div>
+        <div class="input-field">
+            <div class="field-label">Story Points</div>
+            <input type="text" [formControl]="storyPoint">
+        </div>
+        <div class="input-field">
+            <div class="field-label">Story Description</div>
+            <input type="text" [formControl]="storyDescription">
+        </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="clear-btn close-mr" mat-dialog-close>Close</button>
+    <button class="primary-btn" (click)="saveStories()">Add Story Now</button>
+</mat-dialog-actions>

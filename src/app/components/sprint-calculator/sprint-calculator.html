@@ -1,0 +1,18 @@
+
+<div class="sprint-calc-wrap">
+    <div class="sprint-cal-head">SPRINT CALCULATOR</div>
+    <div class="input-field">
+        <div class="field-label">Sprint Name</div>
+        <input type="text" [formControl]="sprintName">
+    </div>
+    <div class="input-field">
+        <div class="field-label">Sprint Points</div>
+        <input type="text" [formControl]="sprintPoint">
+    </div>
+
+    <div class="btn-sec">
+        <button class="primary-btn wd100" (click)="generateSprint()">Generate Sprint</button>
+        <button class="clear-btn wd49" (click)="service.clearStories()">Clear Stories</button>
+        <button class="clear-btn wd49" (click)="service.clearSelectedStories()">Clear Sprits</button>
+    </div>
+</div>

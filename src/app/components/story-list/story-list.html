@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="story-wrap">
+        <div class="title-head justify-between-head">
+            <div>STORIES</div>
+            @if(service.getAllStories().length > 0){
+            <button class="primary-btn" (click)="openDialogNewItem()">Add New Item</button>
+            }
+        </div>
+        <div class="story-list-wrap" [ngClass]="{'empty-list' : service.getAllStories().length == 0}">
+            @if(service.getAllStories().length == 0){
+            <button class="primary-btn" (click)="openDialogNewItem()">Add New Item</button>
+            }
+
+            @else{
+            <div class="all-stories">
+                @for(story of service.getAllStories(); track $index){
+                <mat-card class="single-story" appearance="outlined">
+                    <div class="story-name">{{story.name}}</div>
+                    <div class="story-point">{{story.points}}</div>
+                    <div class="story-description">{{story.description}}</div>
+                </mat-card>
+                }
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="sprint-calc">
+        <app-sprint-calculator />
+    </div>
+</div>

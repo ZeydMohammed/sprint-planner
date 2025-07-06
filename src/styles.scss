@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title-head {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.primary-btn {
+    background-color: #40a9a3;
+    color: #FFF;
+    padding: 8px 10px;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    background-color: #ffecec;
+    color: #ff2f2f;
+    border: 1px solid #ff2f2f;
+    padding: 8px 10px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .field-label {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    input {
+        border: 1px solid #000;
+        border-radius: 3px;
+        padding: 8px 10px;
+        width: 100%;
+        background-color: transparent;
+    }
+}
